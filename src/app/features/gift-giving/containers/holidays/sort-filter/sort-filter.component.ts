@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GiftGivingState, selectShowAllHolidays } from '../../../reducers';
+import { GiftGivingState, selectShowAllHolidays, selectSortingHolidaysBy } from '../../../reducers';
 import { Store } from '@ngrx/store';
 import * as actions from '../../../actions/sort-filter.actions';
 import { Observable } from 'rxjs';
@@ -16,6 +16,7 @@ export class SortFilterComponent implements OnInit {
 
   ngOnInit() {
     this.showAll$ = this.store.select(selectShowAllHolidays);
+
   }
 
   viewAll() {
@@ -23,6 +24,15 @@ export class SortFilterComponent implements OnInit {
   }
   showOnlyUpcoming() {
     this.store.dispatch(actions.filterShowOnlyUpcoming());
+  }
+
+  sortByName() {
+    this.store.dispatch(actions.sortHolidayByName());
+
+  }
+  sortByDate() {
+    this.store.dispatch(actions.sortHolidayByDate());
+
   }
 
 }

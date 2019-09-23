@@ -12,4 +12,14 @@ export class EntryComponent implements OnInit {
   ngOnInit() {
   }
 
+  addItem(nameEl: HTMLInputElement, dateEl: HTMLInputElement) {
+    const name = nameEl.value;
+    const date = dateEl.valueAsDate.toISOString();
+    // dispatch!
+
+    nameEl.value = '';
+    dateEl.value = '';
+    nameEl.focus();
+  }
+
 }
