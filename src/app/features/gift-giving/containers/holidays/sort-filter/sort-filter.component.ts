@@ -27,11 +27,11 @@ export class SortFilterComponent implements OnInit {
   }
 
   sortByName() {
-    this.store.dispatch(actions.sortHolidayByName());
+    this.store.dispatch(actions.sortHolidaysByName());
 
   }
   sortByDate() {
-    this.store.dispatch(actions.sortHolidayByDate());
+    this.store.dispatch(actions.sortHolidaysByDate());
 
   }
 

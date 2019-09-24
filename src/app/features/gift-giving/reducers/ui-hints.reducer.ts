@@ -13,8 +13,8 @@ const myReducer = createReducer(
   initialState,
   on(sortFilterActions.filterShowAll, (state) => ({ ...state, showAll: true })),
   on(sortFilterActions.filterShowOnlyUpcoming, (state) => ({ ...state, showAll: false })),
-  on(sortFilterActions.sortHolidayByName, (state) => ({ ...state, sortHolidaysBy: 'name' })),
-  on(sortFilterActions.sortHolidayByDate, (state) => ({ ...state, sortHolidaysBy: 'date' }))
+  on(sortFilterActions.sortHolidaysByName, (state) => ({ ...state, sortHolidaysBy: 'name' })),
+  on(sortFilterActions.sortHolidaysByDate, (state) => ({ ...state, sortHolidaysBy: 'date' }))
 );
 export function reducer(state: UiHintsState, action: Action): UiHintsState {
   return myReducer(state, action);
