@@ -42,7 +42,12 @@ const initialState = adapter.getInitialState();
 
 const reducerFunction = createReducer(
   initialState,
-  on(actions.holidayAdded, (state, action) => adapter.addOne(action.entity, state))
+  on(actions.holidayAdded, (state, action) => adapter.addOne(action.entity, state)),
+  on(actions.loadDataSucceeded, (state, action) => adapter.addAll(action.data, state)),
+  on(actions.holidayAddedSuccess, (state, action) => {
+    const tempState = adapter.removeOne(action.oldId, state);
+    return adapter.addOne(action.newEntity, tempState);
+  })
 );
 
 export function reducer(state: HolidayState = initialState, action: Action) {
