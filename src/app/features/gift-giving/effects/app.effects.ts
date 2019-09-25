@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-
+import { pipe } from 'rxjs';
 import { tap, map, switchMap } from 'rxjs/operators';
 import * as appActions from '../../../actions/app.actions';
 import * as sortFilterActions from '../actions/sort-filter.actions';
-import { environment } from 'src/environments/environment.prod';
 import { loadHolidayData } from '../actions/holidays.actions';
+
 @Injectable()
 export class AppEffects {
 

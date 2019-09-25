@@ -1,4 +1,3 @@
-
 import { createAction, props } from '@ngrx/store';
 import { HolidayEntity } from '../reducers/holidays.reducer';
 
@@ -22,9 +21,8 @@ export const holidayAddedSuccess = createAction(
 
 export const holidayAddedFailure = createAction(
   '[gift giving] holiday added failure',
-  props<{ message: string, newEntity: HolidayEntity }>()
+  props<{ message: string, entity: HolidayEntity }>()
 );
-
 
 export const loadHolidayData = createAction(
   '[gift giving] load holiday data'

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { HolidayListItem } from '../../models';
 import { Store } from '@ngrx/store';
 import { GiftGivingState, selectHolidayListItems, selectHolidaysLoaded } from '../../reducers';
+import { Observable } from 'rxjs';
+import { HolidayListItem } from '../../models';
 
 @Component({
   selector: 'app-holidays',
@@ -10,6 +10,7 @@ import { GiftGivingState, selectHolidayListItems, selectHolidaysLoaded } from '.
   styleUrls: ['./holidays.component.css']
 })
 export class HolidaysComponent implements OnInit {
+
   holidaysLoaded$: Observable<boolean>;
   holidays$: Observable<HolidayListItem[]>;
 
@@ -19,4 +20,5 @@ export class HolidaysComponent implements OnInit {
     this.holidays$ = this.store.select(selectHolidayListItems);
     this.holidaysLoaded$ = this.store.select(selectHolidaysLoaded);
   }
+
 }

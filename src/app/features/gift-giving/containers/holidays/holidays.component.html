@@ -4,7 +4,6 @@
 <section class="alert alert-success"
          *ngIf="!(holidaysLoaded$ | async)">
   <h2>Getting yer data.</h2>
-
 </section>
 <section *ngIf="holidaysLoaded$ | async">
   <app-holiday-entry></app-holiday-entry>
